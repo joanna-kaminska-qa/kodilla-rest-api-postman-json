@@ -7,7 +7,7 @@
 ![Mockito](https://img.shields.io/badge/Mockito-5.3.1-orange)
 ![RestAssured](https://img.shields.io/badge/RestAssured-5.4.0-blueviolet)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Status: Completed](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ---
 
