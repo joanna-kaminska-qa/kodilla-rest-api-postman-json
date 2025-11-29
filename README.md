@@ -30,7 +30,7 @@ The project was developed in **IntelliJ IDEA**, using **Java 21** and **Spring B
 
 ## Description
 
-### ✔ Spring Boot REST API
+### Spring Boot REST API
 A simple book-management API with:
 
 - `GET /books`
@@ -44,7 +44,7 @@ Architecture:
 - `BookService`
 - `BookDto`
 
-### ✔ REST API Testing
+### REST API Testing
 Using:
 
 - **JUnit 5**
@@ -67,7 +67,7 @@ Included test files:
 - `ExternalApiRestAssuredTest`
 - `ExternalApiTestOfUpdatingAPost`
 
-### ✔ JSON Basics (Module exercises)
+### JSON Basics (Module exercises)
 Folder: `postman-json/Kodilla-homework/`
 
 Contains:
@@ -82,7 +82,7 @@ Files:
 - `Zadanie 10.2 – podstawy JSON.png`
 - `Zadanie 10.3 – screenshot from Postman`
 
-### ✔ Postman Collections
+### Postman Collections
 Stored in: `postman-json/Postman-exercises/`
 
 Included:
@@ -93,7 +93,7 @@ Included:
 
 Useful for API exploratory testing and API automation practice.
 
-### ✔ MailHog Email Automation Script (Node.js)
+### MailHog Email Automation Script (Node.js)
 Folder: `mail-mailhog/`
 
 Contents:
@@ -136,15 +136,14 @@ kodilla-rest-api-postman-json/
 │ │ ├── Zadanie 10.2 - podstawy JSON.png
 │ │ └── Screen z Postmana do zadania 10.3.png
 │ └── Postman-exercises/
-│ ├── HTTPBIN - automatyzacja.postman_collection.json
-│ ├── JSONPlaceholder.postman_collection.json
-│ └── Kurs.postman_collection.json
+│     ├── HTTPBIN - automatyzacja.postman_collection.json
+│     ├── JSONPlaceholder.postman_collection.json
+│     └── Kurs.postman_collection.json
 │
 └── mail-mailhog/
-├── package.json
-├── package-lock.json
-├── skrypt.js
-└── node_modules/...
+    ├── package.json
+    ├── package-lock.json
+    └── skrypt.js
 ```
 ---
 
@@ -214,69 +213,55 @@ tasks.named('test') {
 ---
 ## Test Suites Overview
 
-### ✔ Controller Unit Tests
-Validate:
+### Controller Unit Tests
+**Purpose:** Verify controller behavior without starting the full server.
 
-- JSON responses
-- Returned lists
-- HTTP codes
-- Service interactions
+**Checks performed:**
+- Correct JSON responses
+- Returned lists match expectations
+- HTTP status codes (200, 201, 404)
+- Interaction between Controller and Service
 
-Files:
-
+**Files:**
 - `BookControllerMvcTest`
 - `BookControllerTest`
 
-### ✔ REST Integration Tests (RestAssured)
-Covers:
+---
 
-- Real HTTP requests
-- JSON structure
-- Response validation
-- Correct endpoint behavior
+### REST Integration Tests (RestAssured)
+**Purpose:** Test endpoints with real HTTP requests.
 
-File:
+**Checks performed:**
+- Response validation (JSON structure, content)
+- Correct behavior of endpoints (`GET`, `POST`, `PUT`, `DELETE`)
+- Integration with Spring context
 
+**File:**
 - `BookControllerRestAssuredTest`
 
-### ✔ External API Tests
-Using RestAssured to test:
+---
 
+### External API Tests
+**Purpose:** Verify handling of external APIs using RestAssured.
+
+**Checks performed:**
 - GET requests to public APIs
 - PUT requests (updating posts)
-- JSON validation
+- JSON structure and content validation
 
-Files:
-
+**Files:**
 - `ExternalApiRestAssuredTest`
 - `ExternalApiTestOfUpdatingAPost`
 
 ---
 
-## Postman Collections
-Import collections from:  
-`postman-json/Postman-exercises/*.postman_collection.json`
+**All tests use:**
+- JUnit 5 (Jupiter)
+- Spring MockMvc (for unit tests)
+- RestAssured (for integration and external API tests)
+- Mocking with Mockito where needed
 
-Content includes:
-
-- JSONPlaceholder CRUD tests
-- HTTPBin automation tasks
-- Course exercises
-
----
-
-## ✉ MailHog Email Testing
-Node.js script:  
-`mail-mailhog/skrypt.js`
-
-Run:
-
-```bash
-cd mail-mailhog
-npm install
-node skrypt.js
-```
-Allows sending a test email to MailHog using nodemailer. Useful for QA exercises related to email testing.
+**Goal:** Ensure full coverage of REST API behavior, both internal and external, including correct HTTP responses and JSON payloads.
 
 ---
 
@@ -291,6 +276,7 @@ GitHub: https://github.com/joanna-kaminska-qa
 
 ## Version History
 
+- **0.4** – Expanded test coverage & structural improvements (achieved >60% total test coverage)
 - **0.3** – Added Postman & JSON tasks + MailHog tests
 - **0.2** – README added, improved structure
 - **0.1** – Initial upload
